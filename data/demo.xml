@@ -1,0 +1,20 @@
+<openerp>
+	<data>
+		<record model="open_academy.course" id="Course1">
+			<field name="name">Course1</field>
+			<field name="description"> Descripcion del curso1 Esto puede contener multiple lineas!
+				verdad?
+			</field>
+		</record>
+
+		<record model="open_academy.course" id="Course2">
+			<field name="name">Course2</field>
+		</record>
+
+		<record model="open_academy.course" id="course3">
+			<field name="name">Course3</field>
+			<field name="description"> Hola hola a todos este es el default 3</field>
+		</record>
+		
+	</data>
+</openerp>

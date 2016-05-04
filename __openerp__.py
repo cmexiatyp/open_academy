@@ -47,6 +47,7 @@
     #Estos son datos que se cargan solamente si aplicamos el flag de instalar datos de demostracion al crear una BD nueva        
     'demo': [
         #'demo.xml',
+        'demo/demo.xml',
     ],
     'installable': True,
     'active': False,
