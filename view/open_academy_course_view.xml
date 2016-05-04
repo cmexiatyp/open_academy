@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
 	<data>
+		<!--definicion de la view-->
 		<record model="ir.ui.view" id="open_academy_form_view">
 			<field name="name">"open.academy.form.view"</field> <!-- como convencion es ponerle el mismo nombre del id pero sustituir el _ por . -->
 			<field name="model">open_academy.course</field>
@@ -16,7 +17,8 @@
 			 </field>
 			</record>
 
-			<record model="ir.actions.act_windows" id="course_list_action">
+			<!--ACTION-->
+			<record model="ir.actions.act_window" id="course_list_action">
 				<field name="name">Courses</field>
 				<field name="res_model">open_academy.course</field><!-- esto debe estar definido antes en el otro record-->
 				<field name="view_type">form</field>
@@ -26,4 +28,12 @@
 				</field>
 			</record>
 
+			<!--MENU ITEM Menu principal-->
+			<menuitem id="main_openacademy_menu" name="Open Academy"/>
+			<!--primer nivel de menu-->
+			<menuitem id="openacademy_menu" name="open academy" parent="main_openacademy_menu"/>
+			<!--siguiente menu item que deberia aparecer despues del menu openacademy_menu-->
+			<menuitem id="courses_menu" name="Courses" parent="openacademy_menu" action="course_list_action"/>
+			<!--full id location: action="openacademy.course_list_action"-->
 		</data>
+	</openerp>

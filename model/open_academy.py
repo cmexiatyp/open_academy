@@ -31,8 +31,10 @@ from openerp import fields, models
  '''
 
 class curso(models.Model):
-    "course module"
+    '''
+    course module
+    '''
     _name = 'open_academy.course' ## modelo llamado open academy para el curso tecnico de moylop
 
-    name = fields.Char(string='Title', required= True),
-    description = fiedls.Text(string='Description'),
+    name = fields.Char(string='Title', required= True)
+    description = fields.Text(string='Description')
