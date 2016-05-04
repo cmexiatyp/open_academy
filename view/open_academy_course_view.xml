@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="open_academy_form_view">
+			<field name="name">"open.academy.form.view"</field> <!-- como convencion es ponerle el mismo nombre del id pero sustituir el _ por . -->
+			<field name="model">open_academy.course</field>
+			<field name="arch" type="xml">
+				<form string="Course Form"><!-- ver las diferentes tipo de vista que soporta odoo (documentcion)-->
+					<sheet>
+						<group>
+							<field name="name"/>
+							<field name="description"/>
+						</group>
+					</sheet>
+				</form>
+			 </field>
+			</record>
+
+			<record model="ir.actions.act_windows" id="course_list_action">
+				<field name="name">Courses</field>
+				<field name="res_model">open_academy.course</field><!-- esto debe estar definido antes en el otro record-->
+				<field name="view_type">form</field>
+				<field name="view_mode">tree, form</field>
+				<field name="help" type="html">
+					<p class="oe_view_noncontent_create"> Creando el primer curso</p>
+				</field>
+			</record>
+
+		</data>
