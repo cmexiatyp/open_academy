@@ -10,14 +10,45 @@
 					<sheet>
 						<group>
 							<field name="name"/>
-							<field name="description"/>
 						</group>
+						<!--Notebook son las pestañas o separacioens que tenemos en la hoja de formulario-->
+						<notebook>
+							<page string="Description">
+								<field name="description"/>
+							</page>
+							<page string="About">
+								Este es un ejemplo de como funcionan las libretas en odoo
+							</page>
+						</notebook>
 					</sheet>
 				</form>
 			 </field>
 			</record>
+			<!-- este record nos permitira agregar la busqueda "sugerida" cuando intentamos hacer un filtro-->
+        <record model="ir.ui.view" id="course_search_view">
+            <field name="name">course.search.view</field>
+            <field name="model">open_academy.course</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="description"/>
+                </search>
+            </field>
+        </record>
+        <!--vista de arbol, si no esta definida, se nos crea una con el Valor name por default, aqui ya podemos aregar mas detalles-->
+        <record model="ir.ui.view" id="course_tree_view">
+            <field name="name">course.tree.view</field>
+            <field name="model">open_academy.course</field>
+            <field name="arch" type="xml">
+            	<tree string="Course">
+            		<field = name="name"/>
+            		<field name="Description"/>
+            	</tree>
+            </field>
+        </record>
 
-			<!--ACTION-->
+
+			<!--ACTION, es la accion que mandara llamar el menu-->
 			<record model="ir.actions.act_window" id="course_list_action">
 				<field name="name">Courses</field>
 				<field name="res_model">open_academy.course</field><!-- esto debe estar definido antes en el otro record-->
@@ -37,3 +68,13 @@
 			<!--full id location: action="openacademy.course_list_action"-->
 		</data>
 	</openerp>
+
+
+	<!-- Esta es la estructura de cualquier vista solo cambian los tipos form, tree, graph, search, etc
+	<record model="ir.ui.view" id="course_search_view">
+            <field name="name">course.search.view</field>
+            <field name="model">open_academy.course</field>
+            <field name="arch" type="xml">
+            </field>
+        </record>
+    -->
