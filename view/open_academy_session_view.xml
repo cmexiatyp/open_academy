@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- aqui definimos la vista formulario para la informacion de las sessiones-->
+		  <record model="ir.ui.view" id="session_form_view">
+            <field name="name">session.form</field>
+            <field name="model">open_academy.session</field>
+            <field name="arch" type="xml">
+                <form string="Session Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="start_date"/>
+                            <field name="duration"/>
+                            <field name="seats"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--accion-->
+        <record model="ir.actions.act_window" id="session_list_action">
+            <field name="name">Sessions</field>
+            <field name="res_model">openacademy.session</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!--Menuitem
+        este parent viene desde el otro xml de este mismo modulo donde definimos las vistas padres, actua como un arbol de vistas donde sigue cierta secuencia, tener cuidado en el constructor de openerp de no anteponer al momento de declarar estos xml tambien deben de ir en secuencia, si no al momento de crear una base de datos nueva, la vista hijo se intentara crear su id antes que el id de la vista padre ocasionando esto un error.-->
+        <menuitem id="session_menu" name="Sessions"
+                  parent="openacademy_menu"
+                  action="session_list_action"/>
+
+	</data>
+</openerp>

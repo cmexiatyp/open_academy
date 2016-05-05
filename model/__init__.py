@@ -18,3 +18,4 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ################################################################################
 from . import open_academy
+from . import open_academy_session

@@ -40,7 +40,8 @@
         #aqui por ejemplo podemos insertar un archivo .csv con las ACL que nos ayudaran a restringir acciones en nuestro modulo
         #asi como filtrar usuarios  'security/ir.model.access.csv',
         #Tambien podemos añadir un xml con datos por default    'template.xml',
-        'view/open_academy_course_view.xml',
+        'view/open_academy_course_view.xml', #xml con las vistas padres
+        'view/open_academy_session_view.xml',#xml con vistas child, tener cuidado con esto ya que si se antepone una vista child a una parent, nos marca error
                 ],
     'update_xml': [
         #'vista.xml',
