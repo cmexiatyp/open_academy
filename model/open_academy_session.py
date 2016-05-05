@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from openerp import fields, models
 
-class Session(models.model):
-    _name = "open_academy.Session"
+class Session(models.Model):
+    _name = "open_academy.session"
 
     name = fields.Char(requied=True)## cuando no defines un string, por default aplica formato al nombre de la variable Name quedaria
     start_date = fields.Date()

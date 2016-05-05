@@ -20,10 +20,13 @@
         </record>
         <!--accion-->
         <record model="ir.actions.act_window" id="session_list_action">
-            <field name="name">Sessions</field>
-            <field name="res_model">openacademy.session</field>
+            <field name="name">sessions</field>
+            <field name="res_model">open_academy.session</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_noncontent_create">Esta es la ayuda que va mostrar la vista cuando no existan datos</p>
+            </field>
         </record>
         <!--Menuitem
         este parent viene desde el otro xml de este mismo modulo donde definimos las vistas padres, actua como un arbol de vistas donde sigue cierta secuencia, tener cuidado en el constructor de openerp de no anteponer al momento de declarar estos xml tambien deben de ir en secuencia, si no al momento de crear una base de datos nueva, la vista hijo se intentara crear su id antes que el id de la vista padre ocasionando esto un error.-->

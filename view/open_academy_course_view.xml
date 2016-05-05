@@ -41,23 +41,22 @@
             <field name="model">open_academy.course</field>
             <field name="arch" type="xml">
             	<tree string="Course">
-            		<field = name="name"/>
-            		<field name="Description"/>
+            		<field name="name"/>
+            		<field name="description"/>
             	</tree>
             </field>
         </record>
 
-
 			<!--ACTION, es la accion que mandara llamar el menu-->
-			<record model="ir.actions.act_window" id="course_list_action">
+		<record model="ir.actions.act_window" id="course_list_action">
 				<field name="name">Courses</field>
 				<field name="res_model">open_academy.course</field><!-- esto debe estar definido antes en el otro record-->
 				<field name="view_type">form</field>
-				<field name="view_mode">tree, form</field>
+				<field name="view_mode">tree,form</field>
 				<field name="help" type="html">
 					<p class="oe_view_noncontent_create"> Creando el primer curso</p>
 				</field>
-			</record>
+		</record>
 
 			<!--MENU ITEM Menu principal-->
 			<menuitem id="main_openacademy_menu" name="Open Academy"/>
