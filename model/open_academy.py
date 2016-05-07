@@ -41,7 +41,9 @@ class curso(models.Model):
     responsible_id = fields.Many2one('res.users',# por convencion llamarlo nombrecamppo_id para saber que es un m2o
     					 on_delete="set null",## cuando el valor sea borrado de la base  de datos le arrojaremos un valor por defecto
     					 string="Responsable", index=True)
-
+    session_ids = fields.One2many('open_academy.session', 'course_id', string="Sessions")
+    ##los campos one to many es una lista ids, debe existir un campo many2one en el otro modelo
+    ##para poder hacer uso de este tipo de cmapos
 """
 Por convencion los nombres de las variables hay que setearlas en el idioma base del sistema
 que es: ingles(us) 

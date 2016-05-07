@@ -21,6 +21,14 @@
 							<page string="About">
 								Este es un ejemplo de como funcionan las libretas en odoo
 							</page>
+							<page string="Sessiones">
+								<field name="session_ids"><!--campo O2M-->
+								<tree string="Registred Sessions">
+									<field name="name"/>
+									<field name="instructor_id"/>
+								</tree>
+							</field>
+							</page>
 						</notebook>
 					</sheet>
 				</form>
