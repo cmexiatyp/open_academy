@@ -38,3 +38,11 @@ class curso(models.Model):
 
     name = fields.Char(string='Title', required= True)
     description = fields.Text(string='Description')
+    responsible_id = fields.Many2one('res.users',# por convencion llamarlo nombrecamppo_id para saber que es un m2o
+    					 on_delete="set null",## cuando el valor sea borrado de la base  de datos le arrojaremos un valor por defecto
+    					 string="Responsable", index=True)
+
+"""
+Por convencion los nombres de las variables hay que setearlas en el idioma base del sistema
+que es: ingles(us) 
+"""
