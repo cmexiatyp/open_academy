@@ -8,14 +8,18 @@
             <field name="arch" type="xml">
                 <form string="Session Form">
                     <sheet>
-                        <group>
+                        <group string="General">
                             <field name="course_id"/><!--agregamos el m2o del modelo-->
                             <field name="name"/>
                             <field name="instructor_id"/><!--m20 del modelo-->
+                        </group>
+                        <group string="Schedule">
                             <field name="start_date"/>
                             <field name="duration"/>
                             <field name="seats"/>
                         </group>
+                        <label for="attendes_ids"/>
+                        <field name="attendes_ids"/>
                     </sheet>
                 </form>
             </field>
