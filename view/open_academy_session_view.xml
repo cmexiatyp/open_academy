@@ -12,6 +12,7 @@
                             <field name="course_id"/><!--agregamos el m2o del modelo-->
                             <field name="name"/>
                             <field name="instructor_id"/><!--m20 del modelo-->
+                            <fields name="taken_seats" widget="progressbar"/>
                         </group>
                         <group string="Schedule">
                             <field name="start_date"/>
@@ -29,13 +30,14 @@
             <field name="name">session.tree.form</field>
             <field name="model">open_academy.session</field>
             <field name="arch" type="xml">
-                <tree>
+                <tree string="Session Tree">
                     <field name="course_id"/>
                     <field name="name"/>
                     <field name="instructor_id"/>
                     <field name="start_date"/>
                     <field name="duration"/>
                     <field name="seats"/>
+                    <field name="taken_seats" widget="progressbar"/>
                 </tree>
             </field>
         </record>
