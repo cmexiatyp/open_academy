@@ -16,4 +16,4 @@ class Session(models.Model):
     							on_delete="cascade",
     							string="Curso",
     							requied=True)
-    attendes_ids = fields.Many2many('res.partner', string="Participantes")
+    attendes_ids = fields.Many2many('res.partner', string="Attendes")

@@ -18,7 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ################################################################################
 {
-    'name': 'Modulo',
+    'name': 'Open Academy',
     'suammary': """ Gestionar Entrenamientos!""", 
     'version': '1.0',
     #Las categorias las utilizamos para filtrar dentro de los modulos
