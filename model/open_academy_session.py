@@ -12,7 +12,7 @@ class Session(models.Model):
     								string="Instructor",
     								on_delete="set null",
     								index=True,
-                                    domain=["|"
+                                    domain=["|",
                                     ("instructor","=","True"),
                                     ("category_id","ilike","Teacher")])
                                     ##agregamos el dominio para que solo nos de a seleccionar partners que estan marcados
