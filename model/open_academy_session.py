@@ -12,9 +12,11 @@ class Session(models.Model):
     								string="Instructor",
     								on_delete="set null",
     								index=True,
-                                    domain=[("instructor","=","True")])
+                                    domain=["|"
+                                    ("instructor","=","True"),
+                                    ("category_id","ilike","Teacher")])
                                     ##agregamos el dominio para que solo nos de a seleccionar partners que estan marcados
-                                    ##como instructores
+                                    ##como instructores, Notese que utilizamos la notacion polaca
     course_id = fields.Many2one('open_academy.course',
     							on_delete="cascade",
     							string="Curso",
