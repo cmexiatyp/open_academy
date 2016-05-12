@@ -11,7 +11,10 @@ class Session(models.Model):
     instructor_id = fields.Many2one('res.partner',
     								string="Instructor",
     								on_delete="set null",
-    								index=True)
+    								index=True,
+                                    domain=[("instructor","=","True")])
+                                    ##agregamos el dominio para que solo nos de a seleccionar partners que estan marcados
+                                    ##como instructores
     course_id = fields.Many2one('open_academy.course',
     							on_delete="cascade",
     							string="Curso",
