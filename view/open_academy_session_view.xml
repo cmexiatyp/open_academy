@@ -20,7 +20,12 @@
                             <field name="seats"/>
                         </group>
                         <label for="attendes_ids"/>
-                        <field name="attendes_ids"/>
+                        <field name="attendes_ids" mode="form,tree">
+                            <tree>
+                                <field name="partner_id"/>
+                                <field name="create_date"/>
+                            </tree>
+                        </field>
                     </sheet>
                 </form>
             </field>
