@@ -16,7 +16,7 @@ class Session(models.Model):
                                     ("instructor","=","True"),
                                     ("category_id","ilike","Teacher")])
                                     ##agregamos el dominio para que solo nos de a seleccionar partners que estan marcados
-                                    ##como instructores, Notese que utilizamos la notacion polaca
+                                    ##como instructores o que contienen un tag teacher, Notese que utilizamos la notacion polaca
     course_id = fields.Many2one('open_academy.course',
     							on_delete="cascade",
     							string="Curso",
