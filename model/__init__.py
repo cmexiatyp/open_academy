@@ -19,3 +19,4 @@
 ################################################################################
 from . import open_academy
 from . import open_academy_session
+from . import partner

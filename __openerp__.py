@@ -42,6 +42,7 @@
         #Tambien podemos añadir un xml con datos por default    'template.xml',
         'view/open_academy_course_view.xml', #xml con las vistas padres
         'view/open_academy_session_view.xml',#xml con vistas child, tener cuidado con esto ya que si se antepone una vista child a una parent, nos marca error
+        'view/partner_view.xml',                
                 ],
     'update_xml': [
         #'vista.xml',

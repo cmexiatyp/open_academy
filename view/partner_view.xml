@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="partner_instructor_from_view">
+			<field name="name">partner.view</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_form"/><!--aqui a diferencia de la estructura normal del xml agregamos lo que es la linea de herencia, la referencia que colocamos es el id_externo de la vista que buscamos heredar, podemos hacer esta busqueda mediante interface grafica /configuracion/interface de usuario/views -->
+			<field name="arch" type="xml">
+				<notebook position="inside">
+					<page string="Sessions">
+						<group>
+							<field name="instructor"/>
+							<field name="session_ids"/>
+						</group>
+					</page>
+				</notebook>
+
+			</field>
+		</record>
+	</data>
+</openerp>
