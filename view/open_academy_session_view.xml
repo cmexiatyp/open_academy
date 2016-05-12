@@ -12,7 +12,7 @@
                             <field name="course_id"/><!--agregamos el m2o del modelo-->
                             <field name="name"/>
                             <field name="instructor_id"/><!--m20 del modelo-->
-                            <fields name="taken_seats" widget="progressbar"/>
+                            <field name="taken_seats" widget="progressbar"/>
                         </group>
                         <group string="Schedule">
                             <field name="start_date"/>
