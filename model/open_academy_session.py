@@ -27,10 +27,14 @@ class Session(models.Model):
                                     string="Attendes")
   #                                 relation='open_academy_session_partner',
   #                                 column1='session_id', column2='partner_id', string="Attendes")
-    active = fields
+    active = fields.Boolean(default=True)
+    #Este campo active es una palabra reservada, es decir la procesa orm para establecer un domino
+    #con todos los elementros marcados con un true al momento de desplegar la vista default
+    #asi mismo los active=False no apareceran de primera instancia en la vista a menos que los filtre
+
 
     @api.one #para que entre a cada uno de los registros
-    @api.depends('seats','attendes_ids') #de que campos depende para llevar acabo la def
+    @api.depends('seats','attendes_ids')#de que campos depende para llevar acabo la def
     def _taken_seats(self):
         if not self.seats:
             self.seats = 0
