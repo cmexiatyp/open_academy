@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from openerp import api,fields, models
+from openerp import api, exceptions, fields, models
 
 
 class Session(models.Model):
@@ -62,3 +62,9 @@ class Session(models.Model):
     #en este caso estamos estamos programando un warning(no confundir con constrains) que nos 
     #informa que no estamos siguiendo el flujo deseado del modulo, este mensaje no necesariamente
     #tiene que ser un mensaje de error.
+
+    @api.one
+    @api.constrains('instructor_id','attendes_ids')
+    def _check_instructor_not_in_attendees(self):
+        if self.instructor_id and self.instructor_id:
+            raise exceptions.ValidationError("A session's instructor can't be an attendee")
