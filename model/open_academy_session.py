@@ -16,7 +16,8 @@ class Session(models.Model):
                                     index=True,
                                     domain=["|",
                                     ("instructor","=","True"),
-                                    ("category_id","ilike","Teacher")])
+                                    ("category_id","ilike","Teacher")],
+                                    help="Recordad que al momento de crear el partner instructor")
                                     ##agregamos el dominio para que solo nos de a seleccionar partners que estan marcados
                                     ##como instructores o que contienen un tag teacher, Notese que utilizamos la notacion polaca
     course_id = fields.Many2one('open_academy.course',
@@ -40,3 +41,24 @@ class Session(models.Model):
             self.seats = 0
         else:
             self.taken_seats = 100.0 * len(self.attendes_ids) / self.seats
+
+    @api.onchange('seats','attendes_ids')#campos que estamos monitoreando en el evento on change
+    def _verify_valid_seats(self):
+        if self.seats < 0:
+            return{
+                    'warning': {
+                        'title': "Incorrect 'seats' value",
+                        'message': "The numbers of available seats may not be negative"
+                    }
+            }
+        if self.seats < len(self.attendes_ids):
+            return {
+                'warning': {
+                    'title': "Too Many Attendes",
+                    'message': "Increase seats or remove excess attendees",
+                }
+            }
+    #los eventos on change se validan en el momento del cambio de valores en nuestros fields
+    #en este caso estamos estamos programando un warning(no confundir con constrains) que nos 
+    #informa que no estamos siguiendo el flujo deseado del modulo, este mensaje no necesariamente
+    #tiene que ser un mensaje de error.
