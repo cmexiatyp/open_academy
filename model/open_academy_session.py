@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from datetime import timedelta
 from openerp import api, exceptions, fields, models
 
 
@@ -10,6 +11,7 @@ class Session(models.Model):
     duration = fields.Float(digits=(6,2), help="duracion en dias")
     seats = fields.Integer(string="Numero de asientos en el curso")
     taken_seats = fields.Float(string="Taken seats", compute='_taken_seats')#podemos aplicar store=True
+    end_date = fields.Date(string="End Date", store=True, compute='_get_end_date', inverse='_set_end_date')
     instructor_id = fields.Many2one('res.partner',
                                     string="Instructor",
                                     on_delete="set null",
@@ -68,3 +70,28 @@ class Session(models.Model):
     def _check_instructor_not_in_attendees(self):
         if self.instructor_id and self.instructor_id:
             raise exceptions.ValidationError("A session's instructor can't be an attendee")
+            #en el core podemos ver el archivo exceptions.py donde vienen los tipos
+            
+    @api.depends('start_date', 'duration')
+    def _get_end_date(self):
+        for r in self:
+            if not (r.start_date and r.duration):
+                r.end_date = r.start_date
+                continue
+
+            # Add duration to start_date, but: Monday + 5 days = Saturday, so
+            # subtract one second to get on Friday instead
+            start = fields.Datetime.from_string(r.start_date)
+            duration = timedelta(days=r.duration, seconds=-1)
+            r.end_date = start + duration
+
+    def _set_end_date(self):
+        for r in self:
+            if not (r.start_date and r.end_date):
+                continue
+
+            # Compute the difference between dates, but: Friday - Monday = 4 days,
+            # so add one day to get 5 days instead
+            start_date = fields.Datetime.from_string(r.start_date)
+            end_date = fields.Datetime.from_string(r.end_date)
+            r.duration = (end_date - start_date).days + 1
