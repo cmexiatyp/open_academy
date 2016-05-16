@@ -68,10 +68,9 @@ class Session(models.Model):
     @api.one
     @api.constrains('instructor_id','attendes_ids')
     def _check_instructor_not_in_attendees(self):
-        if self.instructor_id and self.instructor_id:
+        if self.instructor_id and self.instructor_id in self.attendes_ids:
             raise exceptions.ValidationError("A session's instructor can't be an attendee")
-            #en el core podemos ver el archivo exceptions.py donde vienen los tipos
-            
+
     @api.depends('start_date', 'duration')
     def _get_end_date(self):
         for r in self:

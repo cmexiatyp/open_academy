@@ -17,6 +17,7 @@
                         </group>
                         <group string="Schedule">
                             <field name="start_date"/>
+                            <field name="end_date"/>
                             <field name="duration"/>
                             <field name="seats"/>
                         </group>
@@ -37,6 +38,7 @@
                     <field name="name"/>
                     <field name="instructor_id"/>
                     <field name="start_date"/>
+                    <field name="end_date"/>
                     <field name="duration"/>
                     <field name="seats"/>
                     <field name="taken_seats" widget="progressbar"/>
