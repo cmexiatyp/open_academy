@@ -62,7 +62,7 @@ class Session(models.Model):
     #en este caso estamos estamos programando un warning(no confundir con constrains) que nos 
     #informa que no estamos siguiendo el flujo deseado del modulo, este mensaje no necesariamente
     #tiene que ser un mensaje de error.
-
+#python constrains
     @api.one
     @api.constrains('instructor_id','attendes_ids')
     def _check_instructor_not_in_attendees(self):

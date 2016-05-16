@@ -44,7 +44,15 @@ class curso(models.Model):
     session_ids = fields.One2many('open_academy.session', 'course_id', string="Sessions")
     ##los campos one to many es una lista ids, debe existir un campo many2one en el otro modelo
     ##para poder hacer uso de este tipo de cmapos
-"""
-Por convencion los nombres de las variables hay que setearlas en el idioma base del sistema
-que es: ingles(us) 
-"""
+    _sql_constraints = [
+    ('name_description_check',
+     'CHECK(name != description)',
+     "The title of the course should not be the description"),
+
+    ('name_unique',
+     'UNIQUE(name)',
+     "The course title must be unique"),
+    ]
+
+#Por convencion los nombres de las variables hay que setearlas en el idioma base del sistema
+#que es: ingles(us) 
