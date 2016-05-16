@@ -32,7 +32,7 @@
             <field name="name">session.tree.form</field>
             <field name="model">open_academy.session</field>
             <field name="arch" type="xml">
-                <tree string="Session Tree">
+                <tree string="Session Tree" colors="#0000ff:duration&lt;5;red:duration&gt;15"><!--color method-->
                     <field name="course_id"/>
                     <field name="name"/>
                     <field name="instructor_id"/>
