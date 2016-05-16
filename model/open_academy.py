@@ -23,7 +23,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ################################################################################
-from openerp import fields, models
+from openerp import api, fields, models
 
 '''
     Este modulo nos va crear la vista principal de nuestro modulo de demo! openacademy. com!!
@@ -54,5 +54,21 @@ class curso(models.Model):
      "The course title must be unique"),
     ]
 
-#Por convencion los nombres de las variables hay que setearlas en el idioma base del sistema
-#que es: ingles(us) 
+    @api.one #api.one sends default params: cr, uid, id, context
+    def copy(self, default=None):
+        copied_count = self.search_count(
+            [('name','=like', u"Copy of {}%".format(self.name))])
+        if not copied_count:
+            new_name = u"Copy of {}".format(self.name)
+        else:
+            new_name = u"Copy of {}({})".format(self.name, copied_count)
+        default['name'] = new_name
+        return super(curso, self).copy(default)
+        #la funcion copy, nos da la facilidad de duplicar un registro, solo agregamos unas cuantas
+        #validaciones para no tener problemas de nombre(esto es a que debemos hacer un sql constraint)
+        #para evitar recursividad en la informacion.
+
+"""Por convencion los nombres de las variables hay que setearlas en el idioma base del sistema
+que es: ingles(us) """
+
+    
