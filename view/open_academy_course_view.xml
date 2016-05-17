@@ -22,7 +22,7 @@
 								Este es un ejemplo de como funcionan las libretas en odoo
 							</page>
 							<page string="Sessiones">
-								<field name="session_ids"><!--campo O2M-->
+								<field name="session_ids"><!--O2M-->
 								<tree string="Registred Sessions">
 									<field name="name"/>
 									<field name="instructor_id"/>
@@ -67,8 +67,9 @@
 				<field name="res_model">open_academy.course</field><!-- esto debe estar definido antes en el otro record-->
 				<field name="view_type">form</field>
 				<field name="view_mode">tree,form</field>
+				<field name="context" eval="{'search_default_my_courses': 1}"/>
 				<field name="help" type="html">
-					<p class="oe_view_noncontent_create"> Creando el primer curso</p>
+					<p class="oe_view_noncontent_create">Creating the first Course</p>
 				</field>
 		</record>
 
