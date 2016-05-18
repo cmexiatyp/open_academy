@@ -68,7 +68,5 @@ class curso(models.Model):
         #validaciones para no tener problemas de nombre(esto es a que debemos hacer un sql constraint)
         #para evitar recursividad en la informacion.
 
-"""Por convencion los nombres de las variables hay que setearlas en el idioma base del sistema
-que es: ingles(us) """
-
-    
+    """Por convencion los nombres de las variables hay que setearlas en el idioma base del sistema
+    que es: ingles(us) """

@@ -8,7 +8,7 @@ class Session(models.Model):
 
     name = fields.Char(requied=True)## cuando no defines un string, por default aplica formato al nombre de la variable Name quedaria
     start_date = fields.Date(default=fields.Date.today())
-    duration = fields.Float(digits=(6,2), help="duracion en dias")
+    duration = fields.Float(digits=(6,2), help="duration in days")
     seats = fields.Integer(string="Numero de asientos en el curso")
     taken_seats = fields.Float(string="Taken seats", compute='_taken_seats')#podemos aplicar store=True
     end_date = fields.Date(string="End Date", store=True, compute='_get_end_date', inverse='_set_end_date')
@@ -34,6 +34,9 @@ class Session(models.Model):
     #Este campo active es una palabra reservada, es decir la procesa orm para establecer un domino
     #con todos los elementros marcados con un true al momento de desplegar la vista default
     #asi mismo los active=False no apareceran de primera instancia en la vista a menos que los filtre
+    hours = fields.Float(string="Duration in hours",
+                         compute='_get_hours', inverse='_set_hours')
+    #este campo de tipo calculado va renderizar nuestra vista en gantt
 
 
     @api.one #para que entre a cada uno de los registros
@@ -94,3 +97,10 @@ class Session(models.Model):
             start_date = fields.Datetime.from_string(r.start_date)
             end_date = fields.Datetime.from_string(r.end_date)
             r.duration = (end_date - start_date).days + 1
+    @api.one
+    @api.depends('duration')
+    def _get_hours(self):
+        self.hours = self.duration * 24
+    @api.one
+    def _set_hours(self):
+        self.duration = self.hours / 24
