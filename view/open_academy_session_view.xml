@@ -10,10 +10,10 @@
                     <header><!--Vista botones WORKFLOW-->
                         <button name="action_draft" type="object"
                                 string="Reset to draft"
-                                states="confirmed,done"/>
+                                states="confirmed,done"/><!--El name de los botones debe coincidir con el nombre de la funcion que nos cambiara el estado definida en el .py del modelo-->
                         <button name="action_confirm" type="object"
                                 string="Confirm" states="draft"
-                                class="oe_highlight"/>
+                                class="oe_highlight"/><!--El campo states se definen para programar el boton sea solo visible en estos estados. Recibe el parametro state como se guarda en bd-->
                         <button name="action_done" type="object"
                                 string="Mark as done" states="confirmed"
                                 class="oe_highlight"/>

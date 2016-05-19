@@ -53,6 +53,11 @@ class curso(models.Model):
      'UNIQUE(name)',
      "The course title must be unique"),
     ]
+    state = fields.Selection([
+        ('draft', "Draft"),
+        ('confirmed', "Confirmed"),
+        ('done', "Done"),
+    ], default='draft', readonly=True)
 
     @api.one #api.one sends default params: cr, uid, id, context
     def copy(self, default=None):
@@ -67,6 +72,18 @@ class curso(models.Model):
         #la funcion copy, nos da la facilidad de duplicar un registro, solo agregamos unas cuantas
         #validaciones para no tener problemas de nombre(esto es a que debemos hacer un sql constraint)
         #para evitar recursividad en la informacion.
+        
+    @api.multi
+    def action_draft(self):
+        self.state = 'draft'
+
+    @api.multi
+    def action_confirm(self):
+        self.state = 'confirmed'
+
+    @api.multi
+    def action_done(self):
+        self.state = 'done'
 
     """Por convencion los nombres de las variables hay que setearlas en el idioma base del sistema
     que es: ingles(us) """
