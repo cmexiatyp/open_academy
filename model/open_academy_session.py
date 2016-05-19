@@ -110,6 +110,7 @@ class Session(models.Model):
     def _set_hours(self):
         self.duration = self.hours / 24
 
+    @api.one
     @api.depends('attendes_ids')
     def _get_attendes_count(self):
         self.attendes_count = len(self.attendes_ids)
