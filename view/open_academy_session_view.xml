@@ -7,6 +7,18 @@
             <field name="model">open_academy.session</field>
             <field name="arch" type="xml">
                 <form string="Session Form">
+                    <header><!--Vista botones WORKFLOW-->
+                        <button name="action_draft" type="object"
+                                string="Reset to draft"
+                                states="confirmed,done"/>
+                        <button name="action_confirm" type="object"
+                                string="Confirm" states="draft"
+                                class="oe_highlight"/>
+                        <button name="action_done" type="object"
+                                string="Mark as done" states="confirmed"
+                                class="oe_highlight"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
                     <sheet>
                         <group string="General">
                             <field name="course_id"/><!--agregamos el m2o del modelo-->

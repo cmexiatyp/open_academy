@@ -42,9 +42,24 @@ class Session(models.Model):
     #este campo entero de tipo calculado se obtiene procesando la funcion_get_attendes_count abajo
     color = fields.Integer()
     #el campo color se requiere para que nos pueda almacenar el id del color que le defina el user via UI
+    state = fields.Selection([
+        ('draft', "Draft"),
+        ('confirmed', "Confirmed"),
+        ('done', "Done"),
+    ], default='draft', readonly=True)#si no agregas un string, la etiquta sera el nombre del campo
 
+    #para almacenar los estados hay que crear estas funciones
+    @api.multi
+    def action_draft(self):
+        self.state = 'draft'
 
+    @api.multi
+    def action_confirm(self):
+        self.state = 'confirmed'
 
+    @api.multi
+    def action_done(self):
+        self.state = 'done'
 
     @api.one #para que entre a cada uno de los registros
     @api.depends('seats','attendes_ids')#de que campos depende para llevar acabo la def
