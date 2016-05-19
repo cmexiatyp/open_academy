@@ -84,7 +84,7 @@
             <field name="name">sessions</field>
             <field name="res_model">open_academy.session</field>
             <field name="view_type">form</field>
-            <field name="view_mode">tree,form,calendar,gantt</field>
+            <field name="view_mode">tree,form,calendar,gantt,graph</field>
             <field name="help" type="html">
                 <p class="oe_view_noncontent_create">Esta es la ayuda que va mostrar la vista cuando no existan datos</p>
             </field>
