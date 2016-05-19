@@ -40,6 +40,8 @@ class Session(models.Model):
     attendes_count = fields.Integer(string="Attendees Count",
         compute='_get_attendes_count', store=True)
     #este campo entero de tipo calculado se obtiene procesando la funcion_get_attendes_count abajo
+    color = fields.Integer()
+    #el campo color se requiere para que nos pueda almacenar el id del color que le defina el user via UI
 
 
 
