@@ -67,6 +67,17 @@
                 </gantt>
             </field>
         </record>
+        <!--Graph View-->
+        <record model="ir.ui.view" id="session_graph_view">
+            <field name="name">session.graph</field>
+            <field name="model">open_academy.session</field>
+            <field name="arch" type="xml">
+                <graph string="Participation by Courses">
+                    <field name="course_id"/>
+                    <field name="attendes_count" type="measure"/>
+                </graph>
+            </field>
+        </record>
 
         <!--accion-->
         <record model="ir.actions.act_window" id="session_list_action">

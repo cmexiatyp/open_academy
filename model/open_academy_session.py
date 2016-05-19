@@ -37,6 +37,11 @@ class Session(models.Model):
     hours = fields.Float(string="Duration in hours",
                          compute='_get_hours', inverse='_set_hours')
     #este campo de tipo calculado va renderizar nuestra vista en gantt
+    attendes_count = fields.Integer(string="Attendees Count",
+        compute='_get_attendes_count', store=True)
+    #este campo entero de tipo calculado se obtiene procesando la funcion_get_attendes_count abajo
+
+
 
 
     @api.one #para que entre a cada uno de los registros
@@ -104,3 +109,7 @@ class Session(models.Model):
     @api.one
     def _set_hours(self):
         self.duration = self.hours / 24
+
+    @api.depends('attendes_ids')
+    def _get_attendes_count(self):
+        self.attendes_count = len(self.attendes_ids)
