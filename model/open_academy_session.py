@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from datetime import timedelta
-from openerp import api, exceptions, fields, models
+from openerp import api, exceptions, fields, models, _
 
 
 class Session(models.Model):
@@ -74,15 +74,15 @@ class Session(models.Model):
         if self.seats < 0:
             return{
                     'warning': {
-                        'title': "Incorrect 'seats' value",
-                        'message': "The numbers of available seats may not be negative"
+                        'title': _("Incorrect 'seats' value"),
+                        'message': _("The numbers of available seats may not be negative") 
                     }
             }
         if self.seats < len(self.attendes_ids):
             return {
                 'warning': {
-                    'title': "Too Many Attendes",
-                    'message': "Increase seats or remove excess attendees",
+                    'title': _("Too Many Attendes"),
+                    'message': _("Increase seats or remove excess attendees"),
                 }
             }
     #los eventos on change se validan en el momento del cambio de valores en nuestros fields
