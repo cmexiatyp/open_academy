@@ -1,0 +1,266 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* open_academy
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-20 00:20+0000\n"
+"PO-Revision-Date: 2016-05-19 17:45-0800\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 1.5.4\n"
+
+#. module: open_academy
+#: model:ir.actions.act_window,help:open_academy.course_list_action
+msgid ""
+"<p class=\"oe_view_noncontent_create\">Creating the first Course</p>\n"
+"\t\t\t\t"
+msgstr ""
+
+#. module: open_academy
+#: model:ir.actions.act_window,help:open_academy.session_list_action
+msgid ""
+"<p class=\"oe_view_noncontent_create\">Esta es la ayuda que va mostrar la "
+"vista cuando no existan datos</p>\n"
+"            "
+msgstr ""
+
+#. module: open_academy
+#: view:open_academy.course:open_academy.open_academy_form_view
+msgid "About"
+msgstr "acerca"
+
+#. module: open_academy
+#: field:open_academy.session,active:0
+msgid "Active"
+msgstr "Activo"
+
+#. module: open_academy
+#: field:open_academy.session,attendes_ids:0
+msgid "Attendes"
+msgstr "Participantes"
+
+#. module: open_academy
+#: model:ir.ui.menu,name:open_academy.configuration_menu
+msgid "Configuration"
+msgstr "Configuracion"
+
+#. module: open_academy
+#: model:ir.actions.act_window,name:open_academy.contact_list_action
+#: model:ir.ui.menu,name:open_academy.contact_menu
+msgid "Contacts"
+msgstr "Contactos"
+
+#. module: open_academy
+#: view:open_academy.course:open_academy.course_tree_view
+msgid "Course"
+msgstr "Curso"
+
+#. module: open_academy
+#: view:open_academy.course:open_academy.open_academy_form_view
+msgid "Course Form"
+msgstr "Formulario del Curso"
+
+#. module: open_academy
+#: model:ir.actions.act_window,name:open_academy.course_list_action
+#: model:ir.ui.menu,name:open_academy.courses_menu
+msgid "Courses"
+msgstr "Cursos"
+
+#. module: open_academy
+#: field:open_academy.course,create_uid:0
+#: field:open_academy.session,create_uid:0
+msgid "Created by"
+msgstr "Creado Por"
+
+#. module: open_academy
+#: field:open_academy.course,create_date:0
+#: field:open_academy.session,create_date:0
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: open_academy
+#: field:open_academy.session,course_id:0
+msgid "Curso"
+msgstr "Curso"
+
+#. module: open_academy
+#: view:open_academy.course:open_academy.open_academy_form_view
+#: field:open_academy.course,description:0
+msgid "Description"
+msgstr "Descripcion"
+
+#. module: open_academy
+#: field:open_academy.session,duration:0
+msgid "Duration"
+msgstr "Duracion"
+
+#. module: open_academy
+#: field:open_academy.session,end_date:0
+msgid "End Date"
+msgstr "Fecha de termino"
+
+#. module: open_academy
+#: view:open_academy.course:open_academy.open_academy_form_view
+msgid "Este es un ejemplo de como funcionan las libretas en odoo"
+msgstr "Este es un ejemplo de como funcionan las libretas en odoo"
+
+#. module: open_academy
+#: view:open_academy.session:open_academy.session_form_view
+msgid "General"
+msgstr "General"
+
+#. module: open_academy
+#: view:open_academy.course:open_academy.course_search_view
+msgid "Group by"
+msgstr "Agrupar por"
+
+#. module: open_academy
+#: field:open_academy.course,id:0 field:open_academy.session,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: open_academy
+#: field:open_academy.session,instructor_id:0 field:res.partner,instructor:0
+msgid "Instructor"
+msgstr "Instructor"
+
+#. module: open_academy
+#: field:open_academy.course,write_uid:0
+#: field:open_academy.session,write_uid:0
+msgid "Last Updated by"
+msgstr "Actualizado ultima vez por"
+
+#. module: open_academy
+#: field:open_academy.course,write_date:0
+#: field:open_academy.session,write_date:0
+msgid "Last Updated on"
+msgstr "Ultima actualizacion por"
+
+#. module: open_academy
+#: view:open_academy.course:open_academy.course_search_view
+msgid "My Courses"
+msgstr "Mis cursos"
+
+#. module: open_academy
+#: field:open_academy.session,name:0
+msgid "Name"
+msgstr "Nombre"
+
+#. module: open_academy
+#: field:open_academy.session,seats:0
+msgid "Numero de asientos en el curso"
+msgstr "Numero de asientos en el curso"
+
+#. module: open_academy
+#: model:ir.ui.menu,name:open_academy.main_openacademy_menu
+msgid "Open Academy"
+msgstr "Open Academy"
+
+#. module: open_academy
+#: model:ir.model,name:open_academy.model_res_partner
+msgid "Partner"
+msgstr "Socio"
+
+#. module: open_academy
+#: help:open_academy.session,instructor_id:0
+msgid "Recordad que al momento de crear el partner instructor"
+msgstr "Recordad que al momento de crear el partner instructor"
+
+#. module: open_academy
+#: view:open_academy.course:open_academy.open_academy_form_view
+msgid "Registred Sessions"
+msgstr "Sesiones Registradas"
+
+#. module: open_academy
+#: field:open_academy.course,responsible_id:0
+msgid "Responsable"
+msgstr ""
+
+#. module: open_academy
+#: view:open_academy.course:open_academy.course_search_view
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: open_academy
+#: view:open_academy.session:open_academy.session_form_view
+msgid "Schedule"
+msgstr "Horario"
+
+#. module: open_academy
+#: view:open_academy.session:open_academy.session_calendar_view
+msgid "Session Calendar"
+msgstr "Calendario de sesiones"
+
+#. module: open_academy
+#: view:open_academy.session:open_academy.session_form_view
+msgid "Session Form"
+msgstr "Formulario de sesiones"
+
+#. module: open_academy
+#: view:open_academy.session:open_academy.session_tree_view
+msgid "Session Tree"
+msgstr "arbol de sesiones"
+
+#. module: open_academy
+#: view:open_academy.course:open_academy.open_academy_form_view
+msgid "Sessiones"
+msgstr "Sesiones"
+
+#. module: open_academy
+#: model:ir.ui.menu,name:open_academy.session_menu
+#: field:open_academy.course,session_ids:0
+#: view:res.partner:open_academy.partner_instructor_from_view
+msgid "Sessions"
+msgstr "Sesiones"
+
+#. module: open_academy
+#: field:open_academy.session,start_date:0
+msgid "Start date"
+msgstr "Fecha de inicio"
+
+#. module: open_academy
+#: sql_constraint:open_academy.course:0
+msgid "The course title must be unique"
+msgstr "El titulo del Curso debe ser unico"
+
+#. module: open_academy
+#: sql_constraint:open_academy.course:0
+msgid "The title of the course should not be the description"
+msgstr "El titulo del curso no deberia estar en la descripcion del curso"
+
+#. module: open_academy
+#: field:open_academy.course,name:0
+msgid "Title"
+msgstr "Tema"
+
+#. module: open_academy
+#: field:res.partner,session_ids:0
+msgid "attended sessions"
+msgstr "Sesiones asistidas"
+
+#. module: open_academy
+#: help:open_academy.session,duration:0
+msgid "duration in days"
+msgstr "Duracion(dias)"
+
+#. module: open_academy
+#: model:ir.ui.menu,name:open_academy.openacademy_menu
+msgid "open academy"
+msgstr ""
+
+#. module: open_academy
+#: view:open_academy.session:open_academy.session_gantt_view
+msgid "session Gantt"
+msgstr "Gantt de las sesiones"
+
+#. module: open_academy
+#: model:ir.actions.act_window,name:open_academy.session_list_action
+msgid "sessions"
+msgstr "Sesiones"
