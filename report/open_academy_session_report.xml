@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<report id="report_session" model="open_academy.session" string="Session Report" name="open_academy.report_session_view" file="open_academy.report.session" report_type="qweb-pdf" /><!--aqui podemos definir el parametro Attachment_use que es para que genere adjuntos y el parametro attachment que contiene una validacion python para nombrar al reporte, ver documentarcion.
+		name=(nombretecnicomodulo + templateid)-->
+		<!--template del reporte-->
+		<template id="report_session_view">
+						<t t-call="report.html_container">
+			    <t t-foreach="docs" t-as="doc">
+			        <t t-call="report.external_layout">
+			            <div class="page">
+                        <h2 t-field="doc.name"/>
+                        <p>From <span t-field="doc.start_date"/> to <span t-field="doc.end_date"/></p>
+                        <h3>Attendees:</h3>
+                        <ul>
+                            <t t-foreach="doc.attendes_ids" t-as="attendee">
+                                <li><span t-field="attendee.name"/></li>
+                            </t>
+                        </ul>
+                    </div>			            	
+			        </t>
+			    </t>
+			</t>
+		</template>
+	</data>
+</openerp>
+
+<!--Este Odoo nos sugiere que actualizemos a la version 0.12.1 de WKHTMLTOPDF por lo que necesitaremos tener esta libreria en nuestoro sistema nos bajamos la mas reciente de http://wkhtmltopdf.org/downloads.html, descomprimimos el .tar y nos copiamos de la carpeta recien descomprimida /wkhtmltopdf/bin el binario wkhtmltopdf hacia /usr/bin. Ojo para que esto funcion necesitmaos haber instalado previamente una version de la libreria -->
